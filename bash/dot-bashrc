@@ -31,6 +31,9 @@ export NOTES_JAPANESE_S3=$S3_CHROMIUM_BUCKET$S3_JAPANESE_PREFIX
 
 export STOW_DIR="/home/lalonso/.dotfiles"
 
+export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R'
+
 # Source bash keychain file
 if [ -f ~/.bash_kc ]; then
     source ~/.bash_kc
