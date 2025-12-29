@@ -5,6 +5,11 @@
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
+# Source bash keychain file
+if [ -f ~/.bash_kc ]; then
+    source ~/.bash_kc
+fi
+
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
@@ -15,6 +20,7 @@ alias nvom="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias crons="sudo -E crontab -e"
+alias lg="lazygit"
 
 export PATH="$HOME/.scripts:$PATH"
 
@@ -34,8 +40,5 @@ export STOW_DIR="/home/lalonso/.dotfiles"
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R'
 
-# Source bash keychain file
-if [ -f ~/.bash_kc ]; then
-    source ~/.bash_kc
-fi
+[ -f "/home/lalonso/.ghcup/env" ] && . "/home/lalonso/.ghcup/env" # ghcup-env
 
